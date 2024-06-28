@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">BestBuy</string>
+    <string name="title_home">Home</string>
+    <string name="title_products">Products</string>
+    <string name="title_drops">Drops</string>
+    <string name="title_services">Services</string>
+    <string name="title_account">account</string>
+</resources>
