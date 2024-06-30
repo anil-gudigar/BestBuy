@@ -17,3 +17,4 @@ rootProject.name = "BestBuy"
 include(":app")
 include(":core")
 include(":stylekit")
+include(":search")
