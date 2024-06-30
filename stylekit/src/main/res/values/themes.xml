@@ -6,6 +6,7 @@
         <item name="android:textSize">16dp</item>
         <item name="queryHint">Search Best Buy</item>
         <item name="iconifiedByDefault">false</item>
+        <item name="colorControlActivated">@color/colorPrimaryVariant</item>
     </style>
 
     <style name="NoActionBar" parent="@style/Theme.MaterialComponents.Light.NoActionBar">

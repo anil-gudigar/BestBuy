@@ -3,4 +3,6 @@
     <string name="search">Search</string>
     <string name="search_icon">search icon</string>
     <string name="close_icon">close icon</string>
+    <string name="shopping_cart">shopping cart</string>
+    <string name="help">Help</string>
 </resources>
