@@ -4,7 +4,7 @@
     <style name="SearchViewTheme" parent="Widget.AppCompat.SearchView">
         <item name="android:textColorHint">@color/colorPrimary</item>
         <item name="android:textSize">16dp</item>
-        <item name="queryHint">Enter Text</item>
+        <item name="queryHint">Search Best Buy</item>
         <item name="iconifiedByDefault">false</item>
     </style>
 
