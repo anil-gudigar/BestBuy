@@ -4,14 +4,14 @@ plugins {
     id ("kotlin-android")
     id ("kotlin-kapt")
 }
+val configuration = rootProject.extra["configuration"] as Map<*, *>
 
 android {
     namespace = "com.bestbuy.core"
-    compileSdk = 33
+    compileSdk = configuration["compileSdkVersion"] as Int
 
     defaultConfig {
-        minSdk = 24
-
+        minSdk = configuration["minSdkVersion"] as Int
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }

@@ -4,15 +4,19 @@ plugins {
     id ("kotlin-android")
     id ("kotlin-kapt")
 }
+val configuration = rootProject.extra["configuration"] as Map<*, *>
+val debugVersionFileName = rootProject.extra["debugVersionFileName"] as String
+val stagingVersionFileName = rootProject.extra["stagingVersionFileName"] as String
+val releaseVersionFileName = rootProject.extra["releaseVersionFileName"] as String
 
 android {
-    namespace = "com.bestbuy.app"
-    compileSdk = 34
+    namespace = configuration["package"] as String
+    compileSdk = configuration["compileSdkVersion"] as Int
 
     defaultConfig {
-        applicationId = "com.bestbuy.app"
-        minSdk = 24
-        targetSdk = 34
+        applicationId = configuration["package"] as String
+        minSdk = configuration["minSdkVersion"] as Int
+        targetSdk = configuration["targetSdkVersion"] as Int
         versionCode = 1
         versionName = "1.0"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
@@ -51,8 +55,8 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.2")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
-    implementation("androidx.compose.runtime:runtime:1.3.2")
-    implementation("androidx.compose.runtime:runtime:1.0.0")
+    implementation("androidx.compose.runtime:runtime:1.6.8")
+    implementation("androidx.compose.runtime:runtime:1.6.8")
     implementation(project(mapOf("path" to ":core")))
     implementation(project(mapOf("path" to ":search")))
     api(project(mapOf("path" to ":stylekit")))

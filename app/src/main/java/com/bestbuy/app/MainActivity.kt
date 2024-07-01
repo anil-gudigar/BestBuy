@@ -2,25 +2,25 @@ package com.bestbuy.app
 
 import android.graphics.Color
 import android.os.Bundle
-import android.view.Menu
 import android.view.View
 import android.view.WindowManager
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
-import androidx.core.view.MenuItemCompat
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.bestbuy.app.databinding.ActivityMainBinding
+import com.bestbuy.core.navigation.Navigation
+import com.bestbuy.core.view.BaseActivity
 
 /**
  *
  */
-class MainActivity : AppCompatActivity() {
+class MainActivity :  BaseActivity(){
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var navHostFragment: Fragment
+    private lateinit var navView: BottomNavigationView
+
+    override val layout: Int
+        get() = R.layout.activity_main
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,20 +32,51 @@ class MainActivity : AppCompatActivity() {
             statusBarColor = Color.TRANSPARENT
         }
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        setContentView(R.layout.activity_main)
 
-        val navView: BottomNavigationView = binding.navView
-
+        navView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
+        navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main)!!
+
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_products, R.id.navigation_drops,R.id.navigation_services,R.id.navigation_account
-            )
-        )
         navView.setupWithNavController(navController)
 
+        navView.setOnNavigationItemSelectedListener {
+            navController.popBackStack()
+            when (it.itemId) {
+                R.id.navigation_home -> {
+                    navController.navigate(R.id.navigation_home)
+                }
+                R.id.navigation_products -> {
+                    navController.navigate(R.id.navigation_products)
+                }
+                R.id.navigation_drops -> {
+                    navController.navigate(R.id.navigation_drops)
+                }
+                R.id.navigation_account -> {
+                    navController.navigate(R.id.navigation_account)
+                }
+            }
+            return@setOnNavigationItemSelectedListener true
+        }
+
+    }
+
+    override fun navigate(screenName: String, bundle: Bundle) {
+        when (screenName) {
+            Navigation.ScreenName.PRODUCT_DETAILS -> {
+                //Can be use case of Deep links
+                /*findNavController(R.id.nav_host_fragment_activity_main).navigate(
+                    R.id.nav_details, bundle
+                )*/
+            }
+        }
+    }
+
+    override fun hideBottomNav() {
+    }
+
+    override fun showBottomNav() {
     }
 }
