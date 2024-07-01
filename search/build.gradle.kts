@@ -1,18 +1,29 @@
+import java.util.Properties
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
 }
+val configuration = rootProject.extra["configuration"] as Map<*, *>
+val libraries = rootProject.extra["libraries"] as Map<*, *>
+val appProperties = rootProject.extra["appProperties"] as java.util.Properties
+val kotlinVersion = rootProject.extra["kotlinVersion"] as String
+val dokkaVersion = rootProject.extra["dokkaVersion"] as String
+val navigationVersion = rootProject.extra["navigationVersion"] as String
 
 android {
     namespace = "com.bestbuy.search"
-    compileSdk = 33
+    compileSdk = configuration["compileSdkVersion"] as Int
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
 
     defaultConfig {
-        minSdk = 24
-
+        minSdk = configuration["minSdkVersion"] as Int
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
+    dataBinding.enable = true
 
     buildTypes {
         release {
