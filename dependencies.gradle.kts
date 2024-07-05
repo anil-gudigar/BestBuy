@@ -13,7 +13,7 @@ val MINOR by extra("minor")
 val PATCH by extra("patch")
 val BUILD by extra("build")
 
-extra["kotlinVersion"] = "1.4.20"
+extra["kotlinVersion"] = "1.7.0"
 extra["dokkaVersion"] = "0.9.17"
 extra["navigationVersion"] = "2.2.2"
 
@@ -131,8 +131,8 @@ extra["configuration"] = mapOf(
 )
 val commonDependencies = mapOf(
         "kotlinVersion" to "1.4.21",
-        "appCompatVersion" to "1.1.0",
-        "constraintLayoutVersion" to "1.1.3",
+        "appCompatVersion" to "1.7.0",
+        "constraintLayoutVersion" to "1.1.2",
         "archLifeCycleVersion" to "1.1.1",
         "gsonVersion" to "2.8.5",
         "rxKotlinVersion" to "2.3.0",
@@ -144,8 +144,8 @@ val commonDependencies = mapOf(
         "testRunnerVersion" to "1.0.2",
         "mockKVersion" to "1.8.13.kotlin13",
         "espressoVersion" to "3.0.2",
-        "daggerVersion" to "2.23.2",
-        "daggerannotationVersion" to "2.18",
+        "daggerVersion" to "2.44",
+        "daggerannotationVersion" to "2.44",
         "androidxlegacyVersion" to "1.0.0",
         "androidxcoreVesrion" to "1.1.0",
         "multidexVersion" to "2.0.1",
@@ -170,7 +170,7 @@ val commonDependencies = mapOf(
         "sendBirdVersion" to "3.0.96",
         "roomVersion" to "2.2.5",
         "awsversion" to "2.14.+",
-        "stethoVersion" to "1.5.1",
+        "stethoVersion" to "1.6.0",
         "biometricVersion" to "1.0.1",
         "firebaseconfigVersion" to "19.1.0",
         "razorpayVersion" to "1.5.12",
@@ -194,10 +194,10 @@ val commonDependencies = mapOf(
 )
 
 extra["libraries"] = mapOf(
-        "appCompat" to "com.android.support:appcompat-v7:${commonDependencies["appCompatVersion"]}",
+        "appCompat" to "androidx.appcompat:appcompat:${commonDependencies["appCompatVersion"]}",
         "kotlinStdLib" to "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${commonDependencies["kotlinVersion"]}",
-        "constraintLayout" to "com.android.support.constraint:constraint-layout:${commonDependencies["constraintLayoutVersion"]}",
-        "recyclerview" to "com.android.support:recyclerview-v7:${commonDependencies["appCompatVersion"]}",
+        "constraintLayout" to "androidx.constraintlayout:constraintlayout:${commonDependencies["constraintLayoutVersion"]}",
+        "recyclerview" to "androidx.recyclerview:recyclerview:${commonDependencies["appCompatVersion"]}",
         "archLifeCycle" to "android.arch.lifecycle:extensions:${commonDependencies["archLifeCycleVersion"]}",
         "gson" to "com.google.code.gson:gson:${commonDependencies["gsonVersion"]}",
         "rxKotlin" to "io.reactivex.rxjava2:rxkotlin:${commonDependencies["rxKotlinVersion"]}",
@@ -222,7 +222,6 @@ extra["libraries"] = mapOf(
         "biometric" to "androidx.biometric:biometric:${commonDependencies["biometricVersion"]}",
         "firebaseconfig" to "com.google.firebase:firebase-config:${commonDependencies["firebaseconfigVersion"]}",
         "razorpay" to "com.razorpay:checkout:${commonDependencies["razorpayVersion"]}",
-        "androiddesign" to "com.android.support:design:${commonDependencies["androiddesignVersion"]}",
         "architectureLifecycle" to "android.arch.lifecycle:runtime:${commonDependencies["architectureLifecycleVersion"]}",
         "annotationProcessor" to "android.arch.lifecycle:compiler:${commonDependencies["architectureLifecycleVersion"]}",
         "guava" to "com.google.guava:guava:${commonDependencies["guavaVersion"]}",

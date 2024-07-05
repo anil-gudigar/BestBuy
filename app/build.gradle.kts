@@ -17,7 +17,6 @@ android {
     namespace = configuration["package"] as String
     compileSdk = configuration["compileSdkVersion"] as Int
     buildFeatures {
-        compose = true
         buildConfig = true
     }
 
@@ -49,7 +48,6 @@ android {
     }
     buildFeatures {
         viewBinding = true
-        compose = true
     }
 }
 

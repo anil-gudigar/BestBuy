@@ -11,15 +11,15 @@ import androidx.navigation.ui.setupWithNavController
 import com.bestbuy.core.navigation.Navigation
 import com.bestbuy.core.view.BaseActivity
 import dagger.android.DispatchingAndroidInjector
-import dagger.android.support.HasSupportFragmentInjector
+import dagger.android.HasAndroidInjector
 import javax.inject.Inject
 
 /**
  *
  */
-class HomeActivity :  BaseActivity(), HasSupportFragmentInjector {
+class HomeActivity :  BaseActivity(), HasAndroidInjector {
     @Inject
-    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
     private lateinit var navHostFragment: Fragment
     private lateinit var navView: BottomNavigationView
 
@@ -40,7 +40,8 @@ class HomeActivity :  BaseActivity(), HasSupportFragmentInjector {
 
         navView = findViewById(R.id.nav_view)
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-        navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main)!!
+        navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_activity_main)!!
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -52,12 +53,15 @@ class HomeActivity :  BaseActivity(), HasSupportFragmentInjector {
                 R.id.navigation_home -> {
                     navController.navigate(R.id.navigation_home)
                 }
+
                 R.id.navigation_products -> {
                     navController.navigate(R.id.navigation_products)
                 }
+
                 R.id.navigation_drops -> {
                     navController.navigate(R.id.navigation_drops)
                 }
+
                 R.id.navigation_account -> {
                     navController.navigate(R.id.navigation_account)
                 }
@@ -84,5 +88,5 @@ class HomeActivity :  BaseActivity(), HasSupportFragmentInjector {
     override fun showBottomNav() {
     }
 
-    override fun supportFragmentInjector() = dispatchingAndroidInjector
+    override fun androidInjector() = dispatchingAndroidInjector
 }

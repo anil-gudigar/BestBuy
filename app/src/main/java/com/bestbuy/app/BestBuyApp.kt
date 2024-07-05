@@ -7,6 +7,7 @@ import com.bestbuy.app.di.AppInjector
 import com.bestbuy.core.BaseApp
 import com.bestbuy.core.Contextor
 import com.facebook.stetho.Stetho
+import dagger.android.AndroidInjector
 import dagger.android.DispatchingAndroidInjector
 import dagger.android.HasAndroidInjector
 import timber.log.Timber

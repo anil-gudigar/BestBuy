@@ -1,10 +1,12 @@
 package com.bestbuy.core.view
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import dagger.android.support.AndroidSupportInjection
 
 /**
  * @Author: Anil Gudigar
@@ -49,6 +51,11 @@ abstract class BaseFragment: Fragment() {
         if (activity is BaseActivity) {
             (activity as BaseActivity).showBottomNav()
         }
+    }
+
+    override fun onAttach(context: Context) {
+        AndroidSupportInjection.inject(this)
+        super.onAttach(context)
     }
 
 }

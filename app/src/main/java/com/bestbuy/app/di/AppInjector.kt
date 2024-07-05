@@ -9,8 +9,8 @@ import androidx.fragment.app.FragmentManager
 import com.bestbuy.app.BestBuyApp
 import com.bestbuy.core.di.Injectable
 import dagger.android.AndroidInjection
+import dagger.android.HasAndroidInjector
 import dagger.android.support.AndroidSupportInjection
-import dagger.android.support.HasSupportFragmentInjector
 
 /**
  * @Author: Anil Gudigar
@@ -19,10 +19,12 @@ import dagger.android.support.HasSupportFragmentInjector
 object AppInjector {
 
     fun init(application: BestBuyApp) {
-        DaggerAppComponent.builder().application(application)
-            .build().inject(application)
-        application
-            .registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
+        DaggerAppComponent.builder()
+             .application(application)
+             .build()
+             .inject(application)
+
+             application.registerActivityLifecycleCallbacks(object : Application.ActivityLifecycleCallbacks {
                 override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
                     handleActivity(activity)
                 }
@@ -54,7 +56,7 @@ object AppInjector {
     }
 
     private fun handleActivity(activity: Activity) {
-        if (activity is HasSupportFragmentInjector) {
+        if (activity is HasAndroidInjector) {
             AndroidInjection.inject(activity)
         }
         if (activity is FragmentActivity) {
