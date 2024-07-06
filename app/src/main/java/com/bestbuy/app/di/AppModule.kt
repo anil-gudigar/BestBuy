@@ -1,6 +1,7 @@
 package com.bestbuy.app.di
 
 import com.bestbuy.core.di.CoreDataModule
+import com.bestbuy.storelocator.data.di.StoreDataModule
 import dagger.Module
 
 /**
@@ -8,6 +9,6 @@ import dagger.Module
  * @Date: 02/07/24
  */
 @Module(
-    includes = [ViewModelModule::class, CoreDataModule::class]
+    includes = [ViewModelModule::class, CoreDataModule::class, StoreDataModule::class]
 )
 class AppModule

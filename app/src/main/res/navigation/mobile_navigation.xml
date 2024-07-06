@@ -22,4 +22,7 @@
         android:name="com.bestbuy.app.ui.drops.DropsFragment"
         android:label="@string/title_drops"
         tools:layout="@layout/fragment_notifications" />
+    <include
+        android:id="@+id/navigation_services"
+        app:graph="@navigation/stores_navigation" />
 </navigation>

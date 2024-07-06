@@ -2,6 +2,7 @@ package com.bestbuy.app.di
 
 import androidx.lifecycle.ViewModelProvider
 import com.bestbuy.core.di.ViewModelFactory
+import com.bestbuy.storelocator.data.di.StoreViewModelModule
 import dagger.Binds
 import dagger.Module
 
@@ -10,7 +11,7 @@ import dagger.Module
  * @Date: 02/07/24
  */
 @Suppress("unused")
-@Module
+@Module(includes = [StoreViewModelModule::class])
 abstract class ViewModelModule{
     @Binds
     abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory

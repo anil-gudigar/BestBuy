@@ -8,6 +8,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.bestbuy.app.R.id.navigation_services
 import com.bestbuy.core.navigation.Navigation
 import com.bestbuy.core.view.BaseActivity
 import dagger.android.DispatchingAndroidInjector
@@ -53,15 +54,15 @@ class HomeActivity :  BaseActivity(), HasAndroidInjector {
                 R.id.navigation_home -> {
                     navController.navigate(R.id.navigation_home)
                 }
-
                 R.id.navigation_products -> {
                     navController.navigate(R.id.navigation_products)
                 }
-
                 R.id.navigation_drops -> {
                     navController.navigate(R.id.navigation_drops)
                 }
-
+                navigation_services -> {
+                    navController.navigate(R.id.navigation_services)
+                }
                 R.id.navigation_account -> {
                     navController.navigate(R.id.navigation_account)
                 }
