@@ -15,7 +15,6 @@
         android:id="@+id/storeItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
         android:onClick="@{clickListener}"
         android:paddingTop="2dp"
         android:paddingBottom="2dp">
@@ -25,6 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:textColor="@color/black"
             android:text="@{store.name}" />
     </FrameLayout>
 
