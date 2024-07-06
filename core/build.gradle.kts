@@ -59,7 +59,7 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-    api("org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion")
+    api("org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion")
     api("androidx.annotation:annotation:1.8.0")
     libraries["kotlinStdLib"]?.let { api(it) }
     libraries["appCompat"]?.let { api(it) }

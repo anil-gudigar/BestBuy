@@ -1,6 +1,8 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-android")
+    id("kotlin-kapt")
 }
 val configuration = rootProject.extra["configuration"] as Map<*, *>
 val libraries = rootProject.extra["libraries"] as Map<*, *>
@@ -45,15 +47,26 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     api(project(mapOf("path" to ":core")))
     api(project(mapOf("path" to ":stylekit")))
+    // Dagger
+    libraries["daggerannotation"]?.let { kapt(it) }
+    libraries["daggerprocessor"]?.let { kapt(it) }
+    libraries["dagger"]?.let { api(it) }
+    // Room
+    libraries["roomruntime"]?.let { api(it) }
+    libraries["roomruntimektx"]?.let { api(it) }
+    libraries["roomcompiler"]?.let { kapt(it) }
+    libraries["roomcompiler"]?.let { annotationProcessor(it) }
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
+    implementation("androidx.core:core-ktx:1.13.1")
     implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("com.google.android.material:material:1.12.0")
     testImplementation("junit:junit:4.13.2")

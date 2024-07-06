@@ -1,8 +1,8 @@
-package com.bestbuy.storelocator.data.di
+package com.bestbuy.storelocator.di
 
 import androidx.lifecycle.ViewModel
 import com.bestbuy.core.di.ViewModelKey
-import com.bestbuy.storelocator.data.viewmodel.StoresViewModel
+import com.bestbuy.storelocator.viewmodel.StoresViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap

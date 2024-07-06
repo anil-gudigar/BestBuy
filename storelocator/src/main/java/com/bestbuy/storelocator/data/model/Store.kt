@@ -1,57 +1,59 @@
 package com.bestbuy.storelocator.data.model
 
 
-import androidx.databinding.adapters.Converters
 import androidx.room.Entity
+import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
+import com.bestbuy.storelocator.data.local.StoreTypeConverters
 import com.google.gson.annotations.SerializedName
 @Entity(tableName = "store")
-@TypeConverters(Converters::class)
+@TypeConverters(StoreTypeConverters::class)
 data class Store(
-    @SerializedName("address")
+    @field:SerializedName("address")
     var address: String?,
-    @SerializedName("address2")
+    @field:SerializedName("address2")
     var address2: String?,
-    @SerializedName("brand")
-    var brand: Any?,
-    @SerializedName("city")
+    @field:SerializedName("brand")
+    var brand: String?,
+    @field:SerializedName("city")
     var city: String?,
-    @SerializedName("country")
+    @field:SerializedName("country")
     var country: String?,
-    @SerializedName("fullPostalCode")
+    @field:SerializedName("fullPostalCode")
     var fullPostalCode: String?,
-    @SerializedName("gmtOffset")
+    @field:SerializedName("gmtOffset")
     var gmtOffset: Int?,
-    @SerializedName("hours")
+    @field:SerializedName("hours")
     var hours: String?,
-    @SerializedName("hoursAmPm")
+    @field:SerializedName("hoursAmPm")
     var hoursAmPm: String?,
     @SerializedName("language")
-    var language: Any?,
-    @SerializedName("lat")
+    var language: String?,
+    @field:SerializedName("lat")
     var lat: Double?,
-    @SerializedName("lng")
+    @field:SerializedName("lng")
     var lng: Double?,
-    @SerializedName("locationType")
+    @field:SerializedName("locationType")
     var locationType: String?,
-    @SerializedName("longName")
+    @field:SerializedName("longName")
     var longName: String?,
-    @SerializedName("name")
+    @field:SerializedName("name")
     var name: String?,
-    @SerializedName("phone")
+    @field:SerializedName("phone")
     var phone: String?,
-    @SerializedName("postalCode")
+    @field:SerializedName("postalCode")
     var postalCode: String?,
-    @SerializedName("region")
+    @field:SerializedName("region")
     var region: String?,
-    @SerializedName("services")
+    @field:SerializedName("services")
     var services: List<Service>?,
-    @SerializedName("storeId")
+    @field:SerializedName("storeId")
+    @PrimaryKey
     var storeId: Int?,
-    @SerializedName("storeType")
+    @field:SerializedName("storeType")
     var storeType: String?,
-    @SerializedName("tradeIn")
-    var tradeIn: Any?
+    @field:SerializedName("tradeIn")
+    var tradeIn: String?
 ){
     override fun toString(): String {
         return "Store(address=$address, address2=$address2, brand=$brand, city=$city, country=$country, fullPostalCode=$fullPostalCode, gmtOffset=$gmtOffset, hours=$hours, hoursAmPm=$hoursAmPm, language=$language, lat=$lat, lng=$lng, locationType=$locationType, longName=$longName, name=$name, phone=$phone, postalCode=$postalCode, region=$region, services=$services, storeId=$storeId, storeType=$storeType, tradeIn=$tradeIn)"

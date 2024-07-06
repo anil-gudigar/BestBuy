@@ -1,4 +1,4 @@
-package com.bestbuy.storelocator.data.viewmodel
+package com.bestbuy.storelocator.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.viewModelScope
@@ -6,7 +6,7 @@ import androidx.paging.PagingData
 import androidx.paging.cachedIn
 import com.bestbuy.core.viewmodel.BaseViewModel
 import com.bestbuy.storelocator.data.model.Store
-import com.bestbuy.storelocator.data.usecases.StoresUsecase
+import com.bestbuy.storelocator.usecases.StoresUsecase
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject

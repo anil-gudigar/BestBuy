@@ -9,7 +9,7 @@
 
         <variable
             name="vm"
-            type="com.bestbuy.storelocator.data.viewmodel.StoresViewModel" />
+            type="com.bestbuy.storelocator.viewmodel.StoresViewModel" />
     </data>
 
     <FrameLayout

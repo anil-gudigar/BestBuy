@@ -1,7 +1,7 @@
 package com.bestbuy.app.di
 
 import com.bestbuy.app.HomeActivity
-import com.bestbuy.storelocator.data.di.StoresBuildersModule
+import com.bestbuy.storelocator.di.StoreLocatorBuilderModule
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -12,6 +12,6 @@ import dagger.android.ContributesAndroidInjector
 @Suppress("unused")
 @Module
 abstract class HomeActivityModule{
-    @ContributesAndroidInjector(modules = [StoresBuildersModule::class])
+    @ContributesAndroidInjector(modules = [StoreLocatorBuilderModule::class])
     abstract fun contributeHomeActivity(): HomeActivity
 }

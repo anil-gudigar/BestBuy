@@ -1,4 +1,4 @@
-package com.bestbuy.storelocator.data.usecases
+package com.bestbuy.storelocator.usecases
 
 import androidx.paging.PagingData
 import com.bestbuy.storelocator.data.StoresRepository

@@ -1,11 +1,11 @@
 package com.bestbuy.storelocator.data.model
 
 
-import androidx.databinding.adapters.Converters
 import androidx.room.TypeConverters
+import com.bestbuy.storelocator.data.local.StoreTypeConverters
 import com.google.gson.annotations.SerializedName
 
-@TypeConverters(Converters::class)
+@TypeConverters(StoreTypeConverters::class)
 data class Stores(
     @SerializedName("canonicalUrl")
     var canonicalUrl: String?,

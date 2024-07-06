@@ -1,7 +1,6 @@
 package com.bestbuy.storelocator.data.db
 
 import android.content.Context
-import androidx.databinding.adapters.Converters
 import androidx.room.Database
 import androidx.room.DatabaseConfiguration
 import androidx.room.InvalidationTracker
@@ -9,6 +8,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import androidx.sqlite.db.SupportSQLiteOpenHelper
+import com.bestbuy.storelocator.data.local.StoreTypeConverters
 import com.bestbuy.storelocator.data.local.StoreDao
 import com.bestbuy.storelocator.data.model.Store
 
@@ -21,7 +21,7 @@ import com.bestbuy.storelocator.data.model.Store
     entities = [Store::class],
     version = 1, exportSchema = false
 )
-@TypeConverters(Converters::class)
+@TypeConverters(StoreTypeConverters::class)
 abstract class StoresDatabase: RoomDatabase() {
 
     abstract fun storeDao(): StoreDao
@@ -43,17 +43,5 @@ abstract class StoresDatabase: RoomDatabase() {
                 })
                 .build()
         }
-    }
-
-    override fun createOpenHelper(config: DatabaseConfiguration?): SupportSQLiteOpenHelper {
-        TODO("Not yet implemented")
-    }
-
-    override fun createInvalidationTracker(): InvalidationTracker {
-        TODO("Not yet implemented")
-    }
-
-    override fun clearAllTables() {
-        TODO("Not yet implemented")
     }
 }

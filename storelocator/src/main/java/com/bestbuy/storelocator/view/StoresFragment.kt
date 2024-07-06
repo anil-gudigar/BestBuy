@@ -1,16 +1,17 @@
-package com.bestbuy.storelocator.data.view
+package com.bestbuy.storelocator.view
 
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.bestbuy.core.di.Injectable
 import com.bestbuy.core.di.injectViewModel
 import com.bestbuy.core.navigation.Navigation
 import com.bestbuy.core.view.BaseViewModelFragment
 import com.bestbuy.storelocator.R
-import com.bestbuy.storelocator.data.view.adapters.StoresAdapter
-import com.bestbuy.storelocator.data.viewmodel.StoresViewModel
+import com.bestbuy.storelocator.view.adapters.StoresAdapter
+import com.bestbuy.storelocator.viewmodel.StoresViewModel
 import com.bestbuy.storelocator.databinding.StoresFragmentBinding
 import com.bestbuy.stylekit.ui.hide
 import kotlinx.coroutines.flow.collectLatest
@@ -37,7 +38,7 @@ class StoresFragment : BaseViewModelFragment<StoresFragmentBinding, StoresViewMo
         binding.vm = viewModel
         val adapter = StoresAdapter(this)
         binding.recyclerView.setHasFixedSize(true)
-        binding.recyclerView.layoutManager = GridLayoutManager(context, 2)
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
         binding.recyclerView.adapter = adapter
         subscribeUi(binding, adapter)
     }

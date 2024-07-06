@@ -1,7 +1,7 @@
 package com.bestbuy.app.di
 
 import com.bestbuy.core.di.CoreDataModule
-import com.bestbuy.storelocator.data.di.StoreDataModule
+import com.bestbuy.storelocator.di.StoreDataModule
 import dagger.Module
 
 /**

@@ -13,7 +13,7 @@ val MINOR by extra("minor")
 val PATCH by extra("patch")
 val BUILD by extra("build")
 
-extra["kotlinVersion"] = "1.7.0"
+extra["kotlinVersion"] = "1.5.0"
 extra["dokkaVersion"] = "0.9.17"
 extra["navigationVersion"] = "2.2.2"
 
@@ -160,8 +160,8 @@ val commonDependencies = mapOf(
     "testRunnerVersion" to "1.0.2",
     "mockKVersion" to "1.8.13.kotlin13",
     "espressoVersion" to "3.0.2",
-    "daggerVersion" to "2.44",
-    "daggerannotationVersion" to "2.44",
+    "daggerVersion" to "2.48",
+    "daggerannotationVersion" to "2.48",
     "androidxlegacyVersion" to "1.0.0",
     "androidxcoreVesrion" to "1.1.0",
     "multidexVersion" to "2.0.1",
@@ -184,7 +184,7 @@ val commonDependencies = mapOf(
     "MPAndroidChartVersion" to "v3.1.0",
     "expandablerecyclerviewVersion" to "1.3",
     "sendBirdVersion" to "3.0.96",
-    "roomVersion" to "2.2.5",
+    "roomVersion" to "2.5.0",
     "awsversion" to "2.14.+",
     "stethoVersion" to "1.6.0",
     "biometricVersion" to "1.0.1",

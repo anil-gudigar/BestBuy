@@ -2,7 +2,7 @@ package com.bestbuy.app.di
 
 import androidx.lifecycle.ViewModelProvider
 import com.bestbuy.core.di.ViewModelFactory
-import com.bestbuy.storelocator.data.di.StoreViewModelModule
+import com.bestbuy.storelocator.di.StoreViewModelModule
 import dagger.Binds
 import dagger.Module
 

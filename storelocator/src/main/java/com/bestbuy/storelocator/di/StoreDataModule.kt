@@ -1,4 +1,4 @@
-package com.bestbuy.storelocator.data.di
+package com.bestbuy.storelocator.di
 
 import android.app.Application
 import com.bestbuy.core.di.CoreDataModule
@@ -7,7 +7,7 @@ import com.bestbuy.storelocator.data.StoresRepository
 import com.bestbuy.storelocator.data.db.StoresDatabase
 import com.bestbuy.storelocator.data.local.StoreDao
 import com.bestbuy.storelocator.data.remote.StoreLocatorService
-import com.bestbuy.storelocator.data.usecases.StoresUsecase
+import com.bestbuy.storelocator.usecases.StoresUsecase
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit

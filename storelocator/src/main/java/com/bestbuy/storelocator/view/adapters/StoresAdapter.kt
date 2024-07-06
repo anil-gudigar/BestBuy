@@ -1,4 +1,4 @@
-package com.bestbuy.storelocator.data.view.adapters
+package com.bestbuy.storelocator.view.adapters
 
 import android.os.Bundle
 import android.view.LayoutInflater

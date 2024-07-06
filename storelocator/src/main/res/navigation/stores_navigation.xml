@@ -6,7 +6,7 @@
     app:startDestination="@id/nav_stores">
     <fragment
         android:id="@+id/nav_stores"
-        android:name="com.bestbuy.storelocator.data.view.StoresFragment"
+        android:name="com.bestbuy.storelocator.view.StoresFragment"
         android:label="@string/title_stores"
         tools:layout="@layout/stores_fragment">
     </fragment>
