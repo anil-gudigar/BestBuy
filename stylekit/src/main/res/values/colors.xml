@@ -7,4 +7,9 @@
     <color name="black">#FF000000</color>
     <color name="colorSecondary">#ffffff</color>
     <color name="colorSecondaryVariant">#01b4e4</color>
+    <color name="text_color_intro_1">#474747</color>
+    <color name="text_color_intro_2">#8e8e8e</color>
+    <color name="list_item_bg">#1a293c</color>
+    <color name="list_item_title">#828d9f</color>
+    <color name="list_item_subtitle">#394659</color>
 </resources>

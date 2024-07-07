@@ -11,7 +11,77 @@
             type="com.bestbuy.storelocator.data.model.Store" />
     </data>
 
-    <FrameLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/storeItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{clickListener}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="65dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_store"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="315dp"
+            android:layout_height="19dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:autoSizeTextType="uniform"
+            android:text="@{store.name}"
+            android:textColor="@color/list_item_title"
+            app:layout_constraintBottom_toTopOf="@+id/company"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.212"
+            app:layout_constraintStart_toEndOf="@+id/icon"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/company"
+            android:layout_width="314dp"
+            android:layout_height="16dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:autoSizeTextType="uniform"
+            android:text="@{store.storeType}"
+            android:textColor="@color/text_color_intro_2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/position"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.212"
+            app:layout_constraintStart_toEndOf="@+id/icon" />
+
+        <TextView
+            android:id="@+id/position"
+            android:layout_width="315dp"
+            android:layout_height="17dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:autoSizeTextType="uniform"
+            android:text="@{store.address}"
+            android:textColor="@color/list_item_subtitle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.212"
+            app:layout_constraintStart_toEndOf="@+id/icon" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <!--<FrameLayout
         android:id="@+id/storeItem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -27,5 +97,5 @@
             android:textColor="@color/black"
             android:text="@{store.name}" />
     </FrameLayout>
-
+-->
 </layout>

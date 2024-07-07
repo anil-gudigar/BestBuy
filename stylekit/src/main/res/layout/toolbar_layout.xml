@@ -33,8 +33,7 @@
             android:id="@+id/toolbar"
             android:layout_width="100dp"
             android:layout_height="?android:attr/actionBarSize"
-            android:layout_marginTop="@dimen/top_margin"
-            android:layout_gravity="end"
+            android:layout_gravity="center|end"
             app:layout_collapseMode="pin">
 
             <ImageButton
@@ -52,7 +51,6 @@
                 android:layout_width="32dp"
                 android:layout_height="32dp"
                 android:layout_gravity="end"
-                android:layout_margin="8dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_help"
                 android:contentDescription="@string/help"
