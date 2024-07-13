@@ -56,6 +56,7 @@ dependencies {
     api(project(mapOf("path" to ":core")))
     api(project(mapOf("path" to ":search")))
     api(project(mapOf("path" to ":storelocator")))
+    api(project(mapOf("path" to ":discovery")))
     api(project(mapOf("path" to ":stylekit")))
     // Dagger
     libraries["daggerannotation"]?.let { kapt(it) }

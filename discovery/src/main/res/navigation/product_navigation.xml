@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_products"
+    app:startDestination="@id/nav_products">
+    <fragment
+        android:id="@+id/nav_products"
+        android:name="com.bestbuy.discovery.view.ProductFragment"
+        android:label="@string/title_product"
+        tools:layout="@layout/product_fragment"/>
+</navigation>

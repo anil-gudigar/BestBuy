@@ -5,6 +5,8 @@ import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import com.bestbuy.core.BuildConfig
+import com.bestbuy.core.data.DoubleDeserializer
+import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -32,7 +34,11 @@ class CoreDataModule {
 
     @Provides
     @Singleton
-    fun provideGson(): Gson = Gson()
+    fun provideGson(): Gson {
+        return GsonBuilder()
+            .registerTypeAdapter(Double::class.java, DoubleDeserializer())
+            .create()
+    }
 
     @Provides
     @Singleton

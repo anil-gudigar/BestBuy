@@ -11,11 +11,9 @@
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
-    <fragment
+    <include
         android:id="@+id/navigation_products"
-        android:name="com.bestbuy.app.ui.products.ProductsFragment"
-        android:label="@string/title_products"
-        tools:layout="@layout/fragment_dashboard" />
+        app:graph="@navigation/product_navigation" />
 
     <fragment
         android:id="@+id/navigation_drops"

@@ -14,3 +14,15 @@ fun ProgressBar.hide() {
 fun ProgressBar.show() {
     visibility = View.VISIBLE
 }
+
+fun Any?.toDoubleOrZero(): Double {
+    return when (this) {
+        is Number -> this.toDouble()
+        is String -> this.toDoubleOrNull() ?: 0.0
+        else -> 0.0
+    }
+
+}
+fun Any?.toStringOrEmpty(): String {
+    return this?.toString() ?: ""
+}

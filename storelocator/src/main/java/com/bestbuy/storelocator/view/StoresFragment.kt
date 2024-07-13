@@ -3,11 +3,9 @@ package com.bestbuy.storelocator.view
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bestbuy.core.di.Injectable
 import com.bestbuy.core.di.injectViewModel
-import com.bestbuy.core.navigation.Navigation
 import com.bestbuy.core.view.BaseViewModelFragment
 import com.bestbuy.storelocator.R
 import com.bestbuy.storelocator.view.adapters.StoresAdapter
