@@ -3,18 +3,20 @@ package com.bestbuy.storelocator.view
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bestbuy.core.di.Injectable
 import com.bestbuy.core.di.injectViewModel
 import com.bestbuy.core.view.BaseViewModelFragment
 import com.bestbuy.storelocator.R
+import com.bestbuy.storelocator.databinding.StoresFragmentBinding
 import com.bestbuy.storelocator.view.adapters.StoresAdapter
 import com.bestbuy.storelocator.viewmodel.StoresViewModel
-import com.bestbuy.storelocator.databinding.StoresFragmentBinding
 import com.bestbuy.stylekit.ui.hide
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import javax.inject.Inject
+
 
 /**
  * @Author: Anil Gudigar
@@ -38,6 +40,11 @@ class StoresFragment : BaseViewModelFragment<StoresFragmentBinding, StoresViewMo
         binding.recyclerView.setHasFixedSize(true)
         binding.recyclerView.layoutManager = LinearLayoutManager(context)
         binding.recyclerView.adapter = adapter
+        val dividerItemDecoration = DividerItemDecoration(
+            binding.recyclerView.getContext(),
+            DividerItemDecoration.VERTICAL
+        )
+        binding.recyclerView.addItemDecoration(dividerItemDecoration);
         subscribeUi(binding, adapter)
     }
 

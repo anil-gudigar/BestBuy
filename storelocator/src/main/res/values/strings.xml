@@ -2,4 +2,6 @@
 <resources>
     <string name="title_stores">Stores</string>
     <string name="title_details">Details</string>
+    <string name="map_view">Map View</string>
+    <string name="near_me">Near Me</string>
 </resources>

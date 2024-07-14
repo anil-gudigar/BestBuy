@@ -227,7 +227,7 @@ data class Product(
     @SerializedName("productTemplate")
     var productTemplate: String?,
     @SerializedName("productVariations")
-    var productVariations: List<String?>?,
+    var productVariations: Any?,
     @SerializedName("proposition65WarningMessage")
     var proposition65WarningMessage: String?,
     @SerializedName("proposition65WarningType")
