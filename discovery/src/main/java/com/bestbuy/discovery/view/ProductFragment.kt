@@ -3,6 +3,7 @@ package com.bestbuy.discovery.view
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bestbuy.core.di.Injectable
@@ -38,9 +39,13 @@ class ProductFragment : BaseViewModelFragment<ProductFragmentBinding, ProductVie
         binding.vm = viewModel
         val adapter = ProductAdapter(this)
         binding.recyclerView.setHasFixedSize(true)
-        binding.recyclerView.layoutManager = GridLayoutManager(context, 2)
-        binding.recyclerView.addItemDecoration(GridItemDecoration(0, 2))
+        binding.recyclerView.layoutManager = LinearLayoutManager(context)
         binding.recyclerView.adapter = adapter
+        val dividerItemDecoration = DividerItemDecoration(
+            binding.recyclerView.getContext(),
+            DividerItemDecoration.VERTICAL
+        )
+        binding.recyclerView.addItemDecoration(dividerItemDecoration);
         subscribeUi(binding, adapter)
     }
 

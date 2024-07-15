@@ -342,6 +342,22 @@ data class Product(
     var width: String?
 ){
     fun getSalesPrice():String{
-        return salePrice.toStringOrEmpty()
+        return "$ " + salePrice.toStringOrEmpty()
+    }
+
+    fun getCustomDollarSaving():String{
+        return "SAVE $ " + dollarSavings.toStringOrEmpty()
+    }
+
+    fun getCustomerAverageReview(): Float {
+        return  (customerReviewAverage?: 0.0).toFloat()
+    }
+
+    fun getCustomCustomerReviewCount(): String {
+        return  "("+(customerReviewCount?: "0")+")"
+    }
+
+    fun getSoldOutline(): String {
+        return  if (onlineAvailability == true) "Available" else "Sold Out Online"
     }
 }
