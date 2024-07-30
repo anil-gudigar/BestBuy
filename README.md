@@ -7,7 +7,7 @@
 
 
 * Quick summary\
-BestBuy App using Clean Architecture with MVVM pattern. Used Kotlin DSL,Databinding, Daager 2, Retrofit 2, OkHttp 3. Used Room Databased for persistence and Offline support.
+BestBuy Android App using Clean Architecture with MVVM pattern. Used Kotlin DSL,Databinding, Daager 2, Retrofit 2, OkHttp 3. Used Room Databased for persistence and Offline support.
 * Version 1.0
 
 ### How do I get set up? ###
