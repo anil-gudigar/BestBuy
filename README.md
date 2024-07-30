@@ -3,7 +3,7 @@
 
 ### What is this repository for? ###
 # BestBuy
-[http://themoviedb.org](https://developer.bestbuy.com/apis)
+[https://developer.bestbuy.com/apis](https://developer.bestbuy.com/apis)
 
 
 * Quick summary\
